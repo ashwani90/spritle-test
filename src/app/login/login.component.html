@@ -1,3 +1,14 @@
-<p>
-  login works!
-</p>
+<div class="login-page">
+  <div class="form">
+
+    <form class="login-form" [formGroup]="signupForm" (ngSubmit)="onlogin()">
+        <div formGroupName="userData">
+      <input type="text" id="email" placeholder="email" formControlName="email"/>
+      <input type="password" id="pass" placeholder="password" formControlName="pass"/>
+      <span *ngIf="isLoggedIn">Unable to login!</span>
+      <button type="submit">login</button>
+    </div>
+    </form>
+    <p class="message">Not registered? <a routerLink="/register">Create an account</a></p>
+  </div>
+</div>

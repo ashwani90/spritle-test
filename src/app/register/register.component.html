@@ -1,3 +1,15 @@
-<p>
-  register works!
-</p>
+<div class="login-page">
+    <div class="form">
+      <form class="login-form" [formGroup]="signupForm" (ngSubmit)="onRegister()">
+          <div formGroupName="userData">
+        <input type="text" id="name" formControlName="name" placeholder="name" />
+        <input type="password" id="pass" formControlName="pass" placeholder="password" />
+        <input type="email" id="email" formControlName="email" placeholder="email address" />
+        <span *ngIf="unableToRegister">Unable to register!</span>
+        <button type="submit">create</button>
+        </div>
+
+      </form>
+      <p class="message">Already registered? <a routerLink="/login">Sign In</a></p>
+    </div>
+  </div>
